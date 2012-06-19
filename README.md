@@ -9,11 +9,11 @@ Requirements:
 - Vagrant (http://downloads.vagrantup.com/tags/v1.0.3)
 
 Guide:
-1) Download and install required software
-2) Fork this repository
-3) Clone forked repository
-4) Run terminal and execute 'vagrant up'
-5) After provisioning, server should be ready to use (webserver: 8080, mysql: 8889)
+- Download and install required software
+- Fork this repository
+- Clone forked repository
+- Run terminal and execute 'vagrant up'
+- After provisioning, server should be ready to use (webserver: 8080, mysql: 8889)
 
 Note: the src directory is linked to the webserver document root.
 Note: default mysql user and password are root

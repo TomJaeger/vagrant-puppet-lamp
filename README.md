@@ -1,7 +1,7 @@
 vagrant-puppet-lamp
 ===================
 
-Basic Vagrant setup with provision by Puppet
+Basic Vagrant setup with provisioning by Puppet
 Setup: Ubuntu Lucid x86 with LAMP
 
 Requirements:

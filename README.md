@@ -16,5 +16,8 @@ Guide:
 - After provisioning, server should be ready to use (webserver: 8080, mysql: 8889)
 
 Note: the src directory is linked to the webserver document root.
-Note: default mysql user and password are root.
+
+Note: default mysql username and password are root.
+
 Note: mysql server is remotely accessible.
+

@@ -16,7 +16,7 @@ Vagrant::Config.run do |config|
             puppet.manifest_file  = "inventis.pp"
             puppet.module_path = "puppet/modules"
             #puppet.options = "--verbose --debug"
-            puppet.options = "--verbose"
+            #puppet.options = "--verbose"
         end
         
         inv_config.vm.provision :shell, :path => "puppet/scripts/enable_remote_mysql_access.sh"

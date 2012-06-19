@@ -1,0 +1,21 @@
+<VirtualHost *:80>
+	ServerAdmin info@inventis.be
+
+	DocumentRoot /vagrant/src
+	
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	
+	<Directory /vagrant/src/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog /var/log/apache2/error.log
+	LogLevel warn
+	CustomLog /var/log/apache2/access.log combined
+</VirtualHost>

@@ -17,3 +17,4 @@ Guide:
 
 Note: the src directory is linked to the webserver document root.
 Note: default mysql user and password are root
+Note: mysql server is remotely accessible

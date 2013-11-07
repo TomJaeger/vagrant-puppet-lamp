@@ -19,6 +19,7 @@ Ubuntu Lucid x86 with LAMP
 * After provisioning, server should be ready to use. 
 * To test Apache, visit [localhost:8080](http://localhost:8080) in a browser.
 * Make a change to `./src/index.html`, save it and reload the test page. If you see your change, everything is working.
+* When done working, issue a `vagrant halt`.
 
 ### Notes 
 * The `./src` directory is set up as a shared folder and is the web server document root. This means that changes you make to files under `./src`, on your host computer are instantly viewable by reloading the page in your browser.
@@ -29,4 +30,6 @@ Ubuntu Lucid x86 with LAMP
 ```bash
 $ ssh -l vagrant -p 2222 localhost
 ```
-* When prompted, enter the password `vagrant`
+* When prompted, enter the password `vagrant`. The vagrant user has su privilege.
+* Resist the urge to update any of the software on the VM manually. Updating software should be done via [Puppet](http://docs.puppetlabs.com/puppet/3/reference/).
+* 

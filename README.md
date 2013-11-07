@@ -3,22 +3,31 @@ vagrant-puppet-lamp
 
 Basic Vagrant setup with provisioning by Puppet
 
-Setup: Ubuntu Lucid x86 with LAMP
+### Setup
 
-Requirements:
-- VirtualBox (https://www.virtualbox.org/wiki/Downloads)
-- Vagrant (http://downloads.vagrantup.com/tags/v1.0.3)
+Ubuntu Lucid x86 with LAMP
+
+### Requirements
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+* [Vagrant](http://downloads.vagrantup.com/tags/v1.0.3)
 
 Guide:
-- Download and install required software
-- Fork this repository
-- Clone forked repository
-- Run terminal and execute 'vagrant up'
-- After provisioning, server should be ready to use (webserver: 8080, mysql: 8889)
+* Download and install required software
+* Fork this repository
+* Clone forked repository
+* Run terminal and execute 'vagrant up'
+* After provisioning, server should be ready to use. 
+* To test Apache, visit http://localhost:8080 in a browser.
+* Make a change to ./src/index.html, save it and reload the test page.
 
-Note: the src directory is linked to the webserver document root.
+### Notes 
 
-Note: default mysql username and password are root.
+* The `./src` directory is set up as a shared folder and is the web server document root. 
+** Changes made under `./src`, on your host computer are instantly viewable in the browser.
+* The default mysql username and password are `root`.
+* Mysql server is remotely accessible via port 8889
+* To SSH into the Lucid box, try this command from terminal:
 
-Note: mysql server is remotely accessible.
+    $ ssh -l vagrant -p 2222 localhost
 
+* When prompted, enter the password `vagrant`

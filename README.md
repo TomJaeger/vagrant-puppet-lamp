@@ -11,7 +11,7 @@ Ubuntu Lucid x86 with LAMP
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Vagrant](http://downloads.vagrantup.com/tags/v1.0.3)
 
-Guide:
+### Guide 
 * Download and install required software
 * Fork this repository
 * Clone forked repository
@@ -21,9 +21,7 @@ Guide:
 * Make a change to ./src/index.html, save it and reload the test page.
 
 ### Notes 
-
-* The `./src` directory is set up as a shared folder and is the web server document root. 
-** Changes made under `./src`, on your host computer are instantly viewable in the browser.
+* The `./src` directory is set up as a shared folder and is the web server document root. This means that changes you make to files under `./src`, on your host computer are instantly viewable by reloading the page in your browser.
 * The default mysql username and password are `root`.
 * Mysql server is remotely accessible via port 8889
 * To SSH into the Lucid box, try this command from terminal:

@@ -35,3 +35,21 @@ $ ssh -l vagrant -p 2222 localhost
 ```
 * When prompted, enter the password `vagrant`. The vagrant user has su privilege.
 * Resist the urge to update any of the software on the VM manually. Updating software should be done via [Puppet](http://docs.puppetlabs.com/puppet/3/reference/).
+
+### Troubleshooting
+
+If you get this message when trying to start up vagrant-puppet-lamp:
+
+> The guest machine entered an invalid state while waiting for it
+> to boot. Valid states are 'starting, running'. The machine is in the
+> 'poweroff' state. Please verify everything is configured
+> properly and try again.
+
+* See [jakeasmith.com/2013/10/vagrant-invalid-state-power-off](http://jakeasmith.com/2013/10/vagrant-invalid-state-power-off/)
+
+### Resources
+
+* [Vagrant](http://www.vagrantup.com)
+* [Puppet Configuration](https://docs.puppetlabs.com/references/stable/configuration.html)
+* [Puppet Forge](https://forge.puppetlabs.com)
+* [Puppet Users Google Group](https://groups.google.com/forum/#!forum/puppet-users)

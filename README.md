@@ -5,11 +5,10 @@ Basic Vagrant setup with provisioning by Puppet
 
 ### Vagrant Box Details
 
-Ubuntu Lucid x86 with LAMP
-
-Apache/2.2.14 (Ubuntu)
-PHP Version 5.3.2-1ubuntu4.21
-MySQL Server version: 5.1.72-0ubuntu0.10.04.1 (Ubuntu)
+##### Ubuntu Lucid x86 with LAMP
+* Apache/2.2.14 (Ubuntu)
+* PHP Version 5.3.2-1ubuntu4.21
+* MySQL Server version: 5.1.72-0ubuntu0.10.04.1 (Ubuntu)
 
 ### Requirements
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)

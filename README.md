@@ -21,7 +21,7 @@ Basic Vagrant setup with provisioning by Puppet
 * Clone forked repository
 * Run terminal and execute `vagrant up`
 * After provisioning, server should be ready to use.
-* To test Apache, visit [localhost:8080](http://localhost:8080) in a browser.
+* To test Apache, visit [<box-ip>](http://192.168.100.124) in a browser.
 * Make a change to `./src/index.html`, save it and reload the test page. If you see your change, everything is working.
 * When done working, issue a `vagrant halt`.
 

@@ -1,24 +1,35 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant::Config.run do |config|
-    config.vm.define :sdi03 do |inv_config|
-        inv_config.vm.box = "sdi03"
-        inv_config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
-        inv_config.vm.customize ["modifyvm", :id, "--rtcuseutc", "on"]
-        inv_config.ssh.max_tries = 10
-        inv_config.vm.forward_port 80, 8080
-        inv_config.vm.forward_port 3306, 8889
-        inv_config.vm.host_name = "sdi03"
+VAGRANTFILE_API_VERSION = "2"
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-        inv_config.vm.provision :puppet do |puppet|
-            puppet.manifests_path = "puppet/manifests"
-            puppet.manifest_file  = "sdi03.pp"
-            puppet.module_path = "puppet/modules"
-            #puppet.options = "--verbose --debug"
-            #puppet.options = "--verbose"
+        config.vm.provider "virtualbox" do |v|
+                v.customize [
+                        "modifyvm", :id,
+                        "--memory", "1024",
+                        "--cpus", "2",
+                        "--groups", "/Vagrant"
+                ]
+
         end
 
-        inv_config.vm.provision :shell, :path => "puppet/scripts/enable_remote_mysql_access.sh"
-    end
+        config.vm.define :ubuntu_lamp_server do |ubuntu_lamp_config|
+
+                ubuntu_lamp_config.vm.box = "ubuntu-server-12042-x64-vbox4210"
+                ubuntu_lamp_config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box"
+
+                ubuntu_lamp_config.vm.host_name = "ubuntu.lamp.server"
+                ubuntu_lamp_config.vm.network :private_network, ip: "192.168.100.124"
+
+                ubuntu_lamp_config.vm.provision :puppet do |puppet|
+                        puppet.manifests_path = "puppet/manifests"
+                        puppet.manifest_file  = "sdi03.pp"
+                        puppet.module_path = "puppet/modules"
+                        #puppet.options = "--verbose --debug"
+                        #puppet.options = "--verbose"
+                end
+
+                ubuntu_lamp_config.vm.provision :shell, :path => "puppet/scripts/enable_remote_mysql_access.sh"
+        end
 end

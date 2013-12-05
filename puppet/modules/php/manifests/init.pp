@@ -28,4 +28,8 @@ class php {
     notify => Service['apache2']
   }
 
+  exec { "sed -i 's/upload_max_filesize = .*/upload_max_filesize = 2048M/' /etc/php5/apache2/php.ini":
+    require => [ Package['apache2'], Package['php5'], Package['libapache2-mod-php5'] ],
+    notify  => Service['apache2'],
+  }
 }
